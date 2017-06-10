@@ -8,4 +8,4 @@ if __name__ == '__main__':
     conf = SparkConf().setAppName("HelloSpark-Python")
     spark = SparkContext(conf = conf)
     textfile = spark.textFile("hdfs://hadoop.master.com:9000/user/psathishcs/Input/Books/The_Outline_of_Science.txt")
-    print "No of Lines -> " % (textfile.count())
+    print "No of Lines -> %d" % (textfile.count())
