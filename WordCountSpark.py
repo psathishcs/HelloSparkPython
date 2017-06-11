@@ -12,3 +12,5 @@ if __name__ == '__main__':
     words = text_file.flatMap(lambda line: line.split())
     wordCounts = words.map(lambda word: (word, 1)).reduceByKey(lambda a, b:  a + b)
     wordCounts.saveAsTextFile("hdfs://hadoop.master.com:9000/user/psathishcs/Output/Books/Science_Python")
+     
+    
