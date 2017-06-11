@@ -15,8 +15,8 @@ if __name__ == '__main__':
     print "No of Lines -> %d" % (text_file.count())
     print "First -> %s" % (text_file.first())
     sciLines =  text_file.filter(lambda line: "Science" in line)
-    sciLines.saveAsTextFile("hdfs://hadoop.master.com:9000/user/psathishcs/Output/Books/ScienceSci_Python");
+    sciLines.saveAsTextFile("hdfs://hadoop.master.com:9000/user/psathishcs/Output/Books/ScienceSci_Python")
     sciWordLines = text_file.filter(hasScience)
-    sciWordLines.saveAsTextFile("hdfs://hadoop.master.com:9000/user/psathishcs/Output/Books/ScienceSciWord_Python");
+    sciWordLines.saveAsTextFile("hdfs://hadoop.master.com:9000/user/psathishcs/Output/Books/ScienceSciWord_Python")
     
 
