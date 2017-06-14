@@ -13,9 +13,11 @@ if __name__ == '__main__':
     df.select(df['name'], df['founded_year'], df['founded_year'] +10).show()
     
     edf = spark.read.json("hdfs://hadoop.master.com:9000/user/psathishcs/Input/Json/Companies.json")
-    edf.filter(edf['founded_year'] > 2005).show()
+    edf.filter(edf['founded_year'] >= 2005).show()
     
-    print ("Count  df.filter(df['founded_year'] > 2005) -> %d ") % edf.filter(edf['founded_year'] > 2005).count()
+    print ("Count  df.filter(df['founded_year'] > 2005) -> %d ") % edf.filter(edf['founded_year'] >= 2005).count()
+    edf.createOrReplaceTempView("Companies")
+    spark.sql("SELECT name, category_code, blog_url, phone_number, relationships FROM Companies").show()
             
             
     
