@@ -18,6 +18,7 @@ if __name__ == '__main__':
     print ("Count  df.filter(df['founded_year'] > 2005) -> %d ") % edf.filter(edf['founded_year'] >= 2005).count()
     edf.createOrReplaceTempView("Companies")
     spark.sql("SELECT name, category_code, blog_url, phone_number, relationships FROM Companies").show()
+    spark.sql("SELECT count(*) FROM Companies").show()
             
             
     
