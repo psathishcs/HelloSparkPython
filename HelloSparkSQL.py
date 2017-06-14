@@ -10,6 +10,7 @@ if __name__ == '__main__':
     df.printSchema()
     df.show()
     df.select("name").show()
+    df.select(df['name'], df['founded_year'], df['founded_year'] +10).show()
             
             
     
