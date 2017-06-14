@@ -19,7 +19,7 @@ if __name__ == '__main__':
     edf.createOrReplaceTempView("Companies")
     spark.sql("SELECT name, category_code, blog_url, phone_number, relationships FROM Companies").show()
     spark.sql("SELECT count(*) FROM Companies").show()
-    spark.sql("SELECT relationships.person, relationships.title  FROM Companie WHERE name='Facebook'").show()
+    spark.sql("SELECT relationships.person, relationships.title  FROM Companies WHERE name='Facebook'").show()
     
             
             
