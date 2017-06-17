@@ -13,3 +13,5 @@ if __name__ == '__main__':
     pairs = words.map(lambda word: (word, 1))
     wordCounts = pairs.reduceByKey(lambda x , y : x + y)
     wordCounts.pprint()
+    ssc.start()
+    ssc.awaitTermination()
